@@ -1,0 +1,8 @@
+patch:
+    schema_list:
+        - schema: double_pinyin_flypy
+    style/horizontal: true
+    key_binder/bindings:
+        - { accept: "Shift+space", toggle: noop, when: always}
+        - { when: paging, accept: minus, send: Page_Up }
+        - { when: has_menu, accept: equal, send: Page_Down }

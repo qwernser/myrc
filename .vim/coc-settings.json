@@ -1,0 +1,8 @@
+{
+    "coc.preferences.jumpCommand": "tabe",
+
+    "python.formatting.provider": "yapf",
+    "pyright.disableDiagnostics": true,
+    "python.linting.flake8Enabled": true
+
+}
