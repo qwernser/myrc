@@ -1,6 +1,6 @@
 alias py=python3
 alias fk='sudo -E $(history -p !!)'
-alias ipillicium='curl https://illicium.yillicium.com/api'
+alias ipillicium='curl https://api.yillicium.com/ip'
 alias open="xdg-open"
 function dh() {
     du -h "$@"
