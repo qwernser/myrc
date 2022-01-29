@@ -65,6 +65,7 @@ let g:airline_theme='simple'
 " coc and coc example settings
 
 let g:coc_global_extensions = [
+            \'coc-sh',
             \'coc-go',
             \'coc-pyright',
             \'coc-json',
