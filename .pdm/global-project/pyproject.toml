@@ -1,0 +1,11 @@
+[project]
+dependencies = [
+    "pip",
+    "setuptools",
+    "wheel",
+    "yapf>=0.32.0",
+    "flake8>=4.0.1",
+]
+
+[tool]
+[tool.pdm]
