@@ -42,5 +42,7 @@ else
     export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582'
 fi
 
+export PATH="$HOME/go/bin:$PATH"
+
 #xinput --set-prop 13 'Synaptics Scrolling Distance' 150 150
 
