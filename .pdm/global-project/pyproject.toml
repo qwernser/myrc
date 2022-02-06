@@ -4,8 +4,8 @@ dependencies = [
     "setuptools",
     "wheel",
     "yapf>=0.32.0",
-    "flake8>=4.0.1",
-]
+    "toml>=0.10.2",
+    "flake8>=4.0.1"]
 
 [tool]
 [tool.pdm]
