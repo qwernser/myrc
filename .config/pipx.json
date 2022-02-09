@@ -1,0 +1,96 @@
+{
+    "pipx_spec_version": "0.1",
+    "venvs": {
+        "flake8": {
+            "metadata": {
+                "injected_packages": {},
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/rh/.local/pipx/venvs/flake8/bin/flake8",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {
+                        "pycodestyle": [
+                            {
+                                "__Path__": "/home/rh/.local/pipx/venvs/flake8/bin/pycodestyle",
+                                "__type__": "Path"
+                            }
+                        ],
+                        "pyflakes": [
+                            {
+                                "__Path__": "/home/rh/.local/pipx/venvs/flake8/bin/pyflakes",
+                                "__type__": "Path"
+                            }
+                        ]
+                    },
+                    "apps": [
+                        "flake8"
+                    ],
+                    "apps_of_dependencies": [
+                        "pycodestyle",
+                        "pyflakes"
+                    ],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "package": "flake8",
+                    "package_or_url": "flake8",
+                    "package_version": "4.0.1",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.2",
+                "python_version": "Python 3.9.9",
+                "venv_args": []
+            }
+        },
+        "yapf": {
+            "metadata": {
+                "injected_packages": {
+                    "toml": {
+                        "app_paths": [],
+                        "app_paths_of_dependencies": {},
+                        "apps": [],
+                        "apps_of_dependencies": [],
+                        "include_apps": false,
+                        "include_dependencies": false,
+                        "package": "toml",
+                        "package_or_url": "toml",
+                        "package_version": "0.10.2",
+                        "pip_args": [],
+                        "suffix": ""
+                    }
+                },
+                "main_package": {
+                    "app_paths": [
+                        {
+                            "__Path__": "/home/rh/.local/pipx/venvs/yapf/bin/yapf",
+                            "__type__": "Path"
+                        },
+                        {
+                            "__Path__": "/home/rh/.local/pipx/venvs/yapf/bin/yapf-diff",
+                            "__type__": "Path"
+                        }
+                    ],
+                    "app_paths_of_dependencies": {},
+                    "apps": [
+                        "yapf",
+                        "yapf-diff"
+                    ],
+                    "apps_of_dependencies": [],
+                    "include_apps": true,
+                    "include_dependencies": false,
+                    "package": "yapf",
+                    "package_or_url": "yapf",
+                    "package_version": "0.32.0",
+                    "pip_args": [],
+                    "suffix": ""
+                },
+                "pipx_metadata_version": "0.2",
+                "python_version": "Python 3.9.9",
+                "venv_args": []
+            }
+        }
+    }
+}
