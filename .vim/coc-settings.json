@@ -2,7 +2,10 @@
     "coc.preferences.jumpCommand": "tabe",
 
     "python.formatting.provider": "yapf",
+    "python.formatting.yapfPath": "~/.local/bin/yapf",
+
     "pyright.disableDiagnostics": true,
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/.local/bin/flake8"
 
 }

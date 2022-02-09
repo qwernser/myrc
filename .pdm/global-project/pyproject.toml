@@ -2,10 +2,7 @@
 dependencies = [
     "pip",
     "setuptools",
-    "wheel",
-    "yapf>=0.32.0",
-    "toml>=0.10.2",
-    "flake8>=4.0.1"]
+    "wheel"]
 
 [tool]
 [tool.pdm]
