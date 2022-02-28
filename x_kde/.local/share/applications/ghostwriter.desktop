@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=Qt;Office;WordProcessor;
+Comment[en_US]=Distraction-free text editor for Markdown
+Comment=Distraction-free text editor for Markdown
+Exec=sh -c "ghostwriter %f 2> /tmp/ghostwriter.log"
+GenericName[en_US]=Markdown Editor
+GenericName=Markdown Editor
+Icon=ghostwriter
+Keywords=Markdown;editor;document;fullscreen;distraction;concentration;focused;writing;
+MimeType=text/plain;text/markdown;text/markdown;
+Name[en_US]=ghostwriter
+Name=ghostwriter
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+TryExec=ghostwriter
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

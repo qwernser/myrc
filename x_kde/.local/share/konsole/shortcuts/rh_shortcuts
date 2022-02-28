@@ -1,0 +1,11 @@
+<gui version="1" name="konsole">
+  <ActionProperties>
+    <Action shortcut="Ctrl+Shift+W" name="close-session"/>
+    <Action shortcut="Ctrl+Shift+C" name="edit_copy"/>
+    <Action shortcut="Ctrl+Shift+V" name="edit_paste"/>
+    <Action shortcut="Ctrl+Shift+N" name="new-tab"/>
+    <Action shortcut="Alt+Return" name="fullscreen"/>
+    <Action shortcut="Ctrl+Tab" name="next-tab"/>
+    <Action shortcut="Ctrl+Shift+Tab" name="previous-tab"/>
+  </ActionProperties>
+</gui>
