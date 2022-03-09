@@ -22,3 +22,6 @@ function papy() {
         PYTHONPATH=$packages_dir/lib:$PYTHONPATH
     fi
 }
+function mvss() {
+    mv $(ls -c ~/Pictures/Screenshot*) $1
+}
