@@ -23,5 +23,5 @@ function papy() {
     fi
 }
 function mvss() {
-    mv $(ls -c ~/Pictures/Screenshot*) $1
+    mv $(ls -c ~/Pictures/Screenshot* | head -1) $1
 }

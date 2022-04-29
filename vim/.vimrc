@@ -24,6 +24,8 @@ endfunction
 " newline, and punctuation is "skipped"):
 nmap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><C-o>:noh<CR>
 
+nnoremap <C-w><C-w> <C-w>c
+
 " ===========================================================
 " plugin settings
 
@@ -200,3 +202,9 @@ augroup gogroup
     autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 augroup END
 
+" jsx, tsx
+augroup js
+    autocmd!
+    autocmd FileType typescriptreact set shiftwidth=2
+    autocmd FileType javascriptreact set shiftwidth=2
+augroup END

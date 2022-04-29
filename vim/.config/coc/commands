@@ -1,1 +1,3 @@
 editor.action.organizeImport
+go.install.tools
+go.install.gopls
