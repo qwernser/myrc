@@ -51,6 +51,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'flazz/vim-colorschemes',
     "Plug 'flebel/vim-mypy', { 'for': 'python', 'branch': 'bugfix/fast_parser_is_default_and_only_parser' }
     "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' },
+    Plug 'Yggdroot/indentLine',
     Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -66,6 +67,8 @@ set background=dark
 " autocmd ColorScheme * highlight CocHighlightText ctermbg=Red  guibg=#ff0000
 let g:airline_theme='simple'
 
+" indentline
+let g:indentLine_enabled = 0
 
 " ===========================================================
 " coc and coc example settings
@@ -192,6 +195,7 @@ augroup pythongroup
                 \'pyproject.toml',
                 \'pyrightconfig.json'
                 \]
+    autocmd FileType python let g:indentLine_enabled = 1
 augroup END
 
 " go
@@ -200,6 +204,7 @@ augroup gogroup
     autocmd BufWritePre *.go :call CocAction('format')
     autocmd FileType go set expandtab!
     autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+    autocmd FileType go set list lcs=tab:\|\ " a space here
 augroup END
 
 " jsx, tsx
