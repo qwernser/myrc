@@ -52,6 +52,8 @@ call plug#begin('~/.vim/plugged')
     "Plug 'flebel/vim-mypy', { 'for': 'python', 'branch': 'bugfix/fast_parser_is_default_and_only_parser' }
     "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' },
     Plug 'Yggdroot/indentLine',
+    "Plug 'chr4/nginx.vim',
+    Plug 'spacewander/openresty-vim',
     Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -69,6 +71,12 @@ let g:airline_theme='simple'
 
 " indentline
 let g:indentLine_enabled = 0
+
+" openresty-vim
+augroup nginx
+    autocmd!
+    autocmd BufRead,BufNewFile nginx.conf set filetype=nginx
+augroup end
 
 " ===========================================================
 " coc and coc example settings
@@ -196,7 +204,7 @@ augroup pythongroup
                 \'pyrightconfig.json'
                 \]
     autocmd FileType python let g:indentLine_enabled = 1
-augroup END
+augroup end
 
 " go
 augroup gogroup
@@ -205,11 +213,11 @@ augroup gogroup
     autocmd FileType go set expandtab!
     autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
     autocmd FileType go set list lcs=tab:\|\ " a space here
-augroup END
+augroup end
 
 " jsx, tsx
 augroup js
     autocmd!
     autocmd FileType typescriptreact set shiftwidth=2
     autocmd FileType javascriptreact set shiftwidth=2
-augroup END
+augroup end
