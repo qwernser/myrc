@@ -116,5 +116,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(pyenv init -)"
-export JAVA_HOME=/usr/lib/jvm/openjdk-bin-11
+#eval "$(pyenv init -)"
+#export JAVA_HOME=/usr/lib/jvm/openjdk-bin-11

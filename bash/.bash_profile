@@ -4,8 +4,8 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
 
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
@@ -20,29 +20,23 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-eval "$(pyenv init --path)"
-export PATH="$HOME/.local/node/bin:$PATH"
+#eval "$(pyenv init --path)"
+
+#export PATH="$HOME/.local/node/bin:$PATH"
 export PATH="$HOME/.local/go/bin:$PATH"
 
 export EDITOR=vim
 
-if [ -n "$PYTHONPATH" ]; then
-    export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
-else
-    export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582'
-fi
+#if [ -n "$PYTHONPATH" ]; then
+#    export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH
+#else
+#    export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582'
+#fi
 
 export PATH="$HOME/go/bin:$PATH"
 
-#xinput --set-prop 13 'Synaptics Scrolling Distance' 150 150
-
-if [ ! -z "${DISPLAY+aaa}" ] ; then xkbcomp $HOME/.config/output.xkb $DISPLAY 2> /dev/null ; fi
+#if [ ! -z "${DISPLAY+aaa}" ] ; then xkbcomp $HOME/.config/output.xkb $DISPLAY 2> /dev/null ; fi

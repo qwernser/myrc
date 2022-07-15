@@ -53,7 +53,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' },
     Plug 'Yggdroot/indentLine',
     "Plug 'chr4/nginx.vim',
-    Plug 'spacewander/openresty-vim',
+    "Plug 'spacewander/openresty-vim',
     Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -82,9 +82,7 @@ augroup end
 " coc and coc example settings
 
 let g:coc_global_extensions = [
-            \'coc-sh',
             \'coc-go',
-            \'coc-pyright',
             \'coc-json',
             \'coc-highlight'
             \]
