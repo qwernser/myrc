@@ -4,8 +4,8 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.local/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
@@ -24,7 +24,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-#eval "$(pyenv init --path)"
+eval "$(pyenv init --path)"
 
 #export PATH="$HOME/.local/node/bin:$PATH"
 export PATH="$HOME/.local/go/bin:$PATH"
