@@ -125,7 +125,7 @@ for _, lsp in ipairs(servers) do
         on_attach = on_attach,
     }
 end
-require 'lspconfig'.sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -146,6 +146,24 @@ require 'lspconfig'.sumneko_lua.setup {
             telemetry = {
                 enable = false,
             },
+        },
+    },
+}
+local black = {
+    formatCommand = "black --fast -",
+    formatStdin = true,
+}
+lspconfig.efm.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    init_options = { documentFormatting = true },
+    root_dir = vim.loop.cwd,
+    filetypes = { 'python' },
+    settings = {
+        rootMarkers = { ".git/" },
+        -- logLevel = 5,
+        languages = {
+            python = { black },
         },
     },
 }
