@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Breeze
-Font=Monospace,15,-1,5,50,0,0,0,0,0
+Font=DejaVu Sans Mono,18,-1,5,50,0,0,0,0,0
 
 [General]
 Directory=/home/rh

@@ -2,6 +2,7 @@ alias py=python3
 alias fk='sudo -E $(history -p !!)'
 alias ipillicium='curl https://api.yillicium.com/ip'
 alias open="xdg-open"
+alias nv='nvim'
 function dh() {
     du -h "$@"
 }
