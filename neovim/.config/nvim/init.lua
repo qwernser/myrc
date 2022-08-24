@@ -117,6 +117,8 @@ local servers = {
     'pyright', -- pyright
     'gopls', -- gopls
     -- 'sumneko_lua', -- lua-language-server
+    -- 'efm'
+    'jdtls' -- jdtls
 }
 local lspconfig = require('lspconfig')
 for _, lsp in ipairs(servers) do
@@ -153,6 +155,17 @@ local black = {
     formatCommand = "black --fast -",
     formatStdin = true,
 }
+local flake8 = {
+    lintCommand = "flake8 --extend-ignore=F --stdin-display-name ${INPUT} -",
+    lintStdin = true,
+    lintIgnoreExitCode = true,
+    lintFormats = { "%f:%l:%c: %t%n%n %m" },
+    lintSource = "flake8",
+    lintCategoryMap = {
+        E = 'N', -- for the 'H' mark
+        W = 'N',
+    }
+}
 lspconfig.efm.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -163,7 +176,10 @@ lspconfig.efm.setup {
         rootMarkers = { ".git/" },
         -- logLevel = 5,
         languages = {
-            python = { black },
+            python = {
+                black,
+                flake8
+            },
         },
     },
 }
