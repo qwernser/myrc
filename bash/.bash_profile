@@ -29,7 +29,7 @@ eval "$(pyenv init --path)"
 #export PATH="$HOME/.local/node/bin:$PATH"
 export PATH="$HOME/.local/go/bin:$PATH"
 
-export EDITOR=vim
+export EDITOR=nvim
 
 #if [ -n "$PYTHONPATH" ]; then
 #    export PYTHONPATH='/home/rh/.local/share/pdm/venv/lib/python3.10/site-packages/pdm/pep582':$PYTHONPATH

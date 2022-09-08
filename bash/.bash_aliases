@@ -8,8 +8,8 @@ function dh() {
     du -h "$@"
 }
 function geoip() {
-    echo "curl https://api.hackertarget.com/geoip/?q=$1"
-    curl "https://api.hackertarget.com/geoip/?q=$1"
+    echo "curl http://ip-api.com/json/$1"
+    curl "http://ip-api.com/json/$1"
     echo ""
 }
 function unshorten() {
@@ -26,4 +26,7 @@ function papy() {
 }
 function mvss() {
     mv $(ls -c ~/Pictures/Screenshot* | head -1) $1
+}
+function venv() {
+    eval `pdm venv activate $1`
 }

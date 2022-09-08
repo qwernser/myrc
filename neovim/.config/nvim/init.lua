@@ -98,7 +98,7 @@ local on_attach = function(_, bufnr)
         -- vim.lsp.buf.references()
         builtin.lsp_references()
     end, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, bufopts)
     -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<space>wl', function()
@@ -106,7 +106,7 @@ local on_attach = function(_, bufnr)
     -- end, bufopts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    -- vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
@@ -118,7 +118,8 @@ local servers = {
     'gopls', -- gopls
     -- 'sumneko_lua', -- lua-language-server
     -- 'efm'
-    'jdtls' -- jdtls
+    'jdtls', -- jdtls
+    'tsserver', -- typescript-language-server
 }
 local lspconfig = require('lspconfig')
 for _, lsp in ipairs(servers) do
@@ -152,7 +153,7 @@ lspconfig.sumneko_lua.setup {
     },
 }
 local black = {
-    formatCommand = "black --fast -",
+    formatCommand = "black --fast --line-length 79 -",
     formatStdin = true,
 }
 local flake8 = {
@@ -193,7 +194,7 @@ if cmp == nil then
     return
 end
 cmp.setup {
-    -- preselect = cmp.PreselectMode.None,
+    preselect = cmp.PreselectMode.None,
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -234,3 +235,14 @@ cmp.setup {
         { name = 'buffer' },
     })
 }
+
+-- languages
+local setShift = function()
+    vim.opt.shiftwidth = 2
+end
+local tsGroup = vim.api.nvim_create_augroup("ts", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "typescriptreact", "typescript", "javascriptreact", "javascript" },
+    callback = setShift,
+    group = tsGroup,
+})
