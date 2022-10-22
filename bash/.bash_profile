@@ -40,3 +40,7 @@ export EDITOR=nvim
 export PATH="$HOME/go/bin:$PATH"
 
 #if [ ! -z "${DISPLAY+aaa}" ] ; then xkbcomp $HOME/.config/output.xkb $DISPLAY 2> /dev/null ; fi
+
+if [ -f ~/.local/secrets.sh ]; then
+    . ~/.local/secrets.sh
+fi
