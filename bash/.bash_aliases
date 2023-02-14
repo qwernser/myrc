@@ -24,6 +24,14 @@ function papy() {
         PYTHONPATH=$packages_dir/lib:$PYTHONPATH
     fi
 }
+function add_pyright() {
+    cat <<EOF >> ./pyproject.toml
+
+[tool.pyright]
+venvPath = "./"
+venv = ".venv"
+EOF
+}
 function mvss() {
     mv $(ls -c ~/Pictures/Screenshot* | head -1) $1
 }
@@ -31,7 +39,7 @@ function venv() {
     eval `pdm venv activate $1`
 }
 function cf() {
-    curl -s "https://api.cloudflare.com/client/v4/$1" \
+    curl -s "https://api.cloudflare.com/client/v4/$1" "${@:1}" \
         -H "Authorization: Bearer $CF_TOKEN" \
         -H "Content-Type:application/json" | py -m json.tool
 }

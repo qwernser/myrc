@@ -8,6 +8,11 @@ vim.keymap.set('i', 'jj', '<Esc>')
 
 vim.keymap.set('n', '<C-w><C-w>', '<C-w>c')
 
+vim.keymap.set('n', '<C-t>', function()
+    vim.cmd("tab split")
+end
+)
+
 vim.g.netrw_banner = 0
 
 -- packer.nvim
@@ -98,7 +103,7 @@ local on_attach = function(_, bufnr)
         -- vim.lsp.buf.references()
         builtin.lsp_references()
     end, bufopts)
-    vim.keymap.set({'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set({ 'n', 'i' }, '<C-k>', vim.lsp.buf.signature_help, bufopts)
     -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     -- vim.keymap.set('n', '<space>wl', function()
@@ -107,7 +112,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+    -- vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting , bufopts)
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.format, bufopts)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -120,6 +126,7 @@ local servers = {
     -- 'efm'
     'jdtls', -- jdtls
     'tsserver', -- typescript-language-server
+    'ccls',
 }
 local lspconfig = require('lspconfig')
 for _, lsp in ipairs(servers) do
@@ -157,7 +164,7 @@ local black = {
     formatStdin = true,
 }
 local flake8 = {
-    lintCommand = "flake8 --extend-ignore=F --stdin-display-name ${INPUT} -",
+    lintCommand = "flake8 --extend-ignore=F --ignore=E203 --stdin-display-name ${INPUT} -",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = { "%f:%l:%c: %t%n%n %m" },

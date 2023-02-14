@@ -1,8 +1,0 @@
-[project]
-dependencies = [
-    "pip",
-    "setuptools",
-    "wheel"]
-
-[tool]
-[tool.pdm]
