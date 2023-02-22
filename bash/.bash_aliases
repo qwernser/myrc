@@ -4,6 +4,8 @@ alias ipillicium='curl https://api.yillicium.com/ip'
 alias open="xdg-open"
 alias nv='nvim'
 alias n='nvim'
+alias qr='xclip -selection clipboard -o -t image/png | my-qr-decoder'
+alias clip='xclip -selection clipboard'
 function dh() {
     du -h "$@"
 }
@@ -43,3 +45,4 @@ function cf() {
         -H "Authorization: Bearer $CF_TOKEN" \
         -H "Content-Type:application/json" | py -m json.tool
 }
+alias ocr='(cd ~/.local/ocr/ ; mvss 1.png ; node index.mjs | clip)'
