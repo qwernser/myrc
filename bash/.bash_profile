@@ -26,7 +26,6 @@ fi
 
 eval "$(pyenv init --path)"
 
-#export PATH="$HOME/.local/node/bin:$PATH"
 export PATH="$HOME/.local/go/bin:$PATH"
 
 export EDITOR=nvim
@@ -45,18 +44,14 @@ if [ -f ~/.local/secrets.sh ]; then
     . ~/.local/secrets.sh
 fi
 
-export PATH="$HOME/.local/nodejs/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-
 export NVM_DIR="$HOME/.nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
-    function nvm() {
+    function nvm_init() {
         . "$NVM_DIR/nvm.sh"  # This loads nvm
         if [ -s "$NVM_DIR/bash_completion" ]; then
             . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
         fi
     }
-    export -f nvm
-    nvm
+    nvm_init
+    export -f nvm_init
 fi
