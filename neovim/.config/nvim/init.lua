@@ -60,6 +60,7 @@ require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'L3MON4D3/LuaSnip'
     use "rafamadriz/friendly-snippets"
+    use "alvan/vim-closetag"
 end)
 
 -- appearance
@@ -135,7 +136,7 @@ for _, lsp in ipairs(servers) do
         on_attach = on_attach,
     }
 end
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
@@ -242,6 +243,8 @@ cmp.setup {
         { name = 'buffer' },
     })
 }
+
+vim.g.closetag_filetypes = 'html,xhtml,phtml,typescriptreact,javascriptreact'
 
 -- languages
 local setShift = function()
