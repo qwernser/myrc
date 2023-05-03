@@ -165,7 +165,7 @@ local black = {
     formatStdin = true,
 }
 local flake8 = {
-    lintCommand = "flake8 --extend-ignore=F --ignore=E203 --stdin-display-name ${INPUT} -",
+    lintCommand = "flake8 --extend-ignore=F --ignore=E203,W503 --stdin-display-name ${INPUT} -",
     lintStdin = true,
     lintIgnoreExitCode = true,
     lintFormats = { "%f:%l:%c: %t%n%n %m" },
