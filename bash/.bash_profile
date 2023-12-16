@@ -55,3 +55,5 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
     nvm_init
     export -f nvm_init
 fi
+
+export PATH="$HOME/.local/gradle/bin:$PATH"

@@ -4,6 +4,8 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+vim.opt.number = true
+
 vim.keymap.set('i', 'jj', '<Esc>')
 
 vim.keymap.set('n', '<C-w><C-w>', '<C-w>c')

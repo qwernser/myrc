@@ -123,3 +123,4 @@ eval "$(pyenv init -)"
 if [ -f ~/.local/secrets.sh ]; then
     . ~/.local/secrets.sh
 fi
+export PATH=$PATH:$HOME/downloads/gradle-8.4/bin
