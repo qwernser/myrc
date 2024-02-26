@@ -22,6 +22,10 @@ vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -70,6 +74,15 @@ vim.o.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
 
 require('lualine').setup {}
+
+-- treesitter
+require 'nvim-treesitter.configs'.setup {
+    ensure_installed = { "go" },
+    auto_install = false,
+    highlight = {
+        enable = true,
+    },
+}
 
 -- lsp, snippets and completion
 
@@ -223,8 +236,8 @@ cmp.setup {
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            -- elseif luasnip.expand_or_jumpable() then
-            --     luasnip.expand_or_jump()
+                -- elseif luasnip.expand_or_jumpable() then
+                --     luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -232,8 +245,8 @@ cmp.setup {
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            -- elseif luasnip.jumpable(-1) then
-            --     luasnip.jump(-1)
+                -- elseif luasnip.jumpable(-1) then
+                --     luasnip.jump(-1)
             else
                 fallback()
             end
