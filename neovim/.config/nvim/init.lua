@@ -77,11 +77,14 @@ require('lualine').setup {}
 
 -- treesitter
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "go" },
+    ensure_installed = { "go", "rust", "toml" },
     auto_install = false,
     highlight = {
         enable = true,
     },
+    sync_install = false,
+    modules = {},
+    ignore_install = {}
 }
 
 -- lsp, snippets and completion
@@ -138,12 +141,13 @@ capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 local servers = {
     'pyright', -- pyright
-    'gopls', -- gopls
+    'gopls',   -- gopls
     -- 'sumneko_lua', -- lua-language-server
     -- 'efm'
-    'jdtls', -- jdtls
+    -- 'jdtls',    -- jdtls
     'tsserver', -- typescript-language-server
-    'ccls',
+    -- 'ccls',
+    'rust_analyzer',
 }
 local lspconfig = require('lspconfig')
 for _, lsp in ipairs(servers) do
