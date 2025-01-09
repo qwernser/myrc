@@ -35,7 +35,7 @@ venv = ".venv"
 EOF
 }
 function mvss() {
-    mv $(ls -c ~/Pictures/Screenshot* | head -1) $1
+    mv $(ls -cd ~/Pictures/Screenshot* | head -1) $1
 }
 function venv() {
     eval `pdm venv activate $1`
