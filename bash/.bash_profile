@@ -57,3 +57,4 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 fi
 
 export PATH="$HOME/.local/gradle/bin:$PATH"
+. "$HOME/.cargo/env"
