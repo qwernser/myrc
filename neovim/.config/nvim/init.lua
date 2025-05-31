@@ -67,6 +67,8 @@ require('packer').startup(function(use)
     -- use 'L3MON4D3/LuaSnip'
     -- use "rafamadriz/friendly-snippets"
     use "alvan/vim-closetag"
+    use "nvzone/volt"
+    use "nvzone/typr"
 end)
 
 -- appearance
@@ -113,8 +115,6 @@ local on_attach = function(_, bufnr)
         builtin.lsp_definitions()
     end, bufopts)
     vim.keymap.set('n', 'gi', function()
-        -- vim.cmd("tab split")
-        -- vim.lsp.buf.implementation()
         builtin.lsp_implementations()
     end, bufopts)
     vim.keymap.set('n', 'gr', function()
@@ -146,7 +146,7 @@ local servers = {
     -- 'efm'
     -- 'jdtls',    -- jdtls
     'tsserver', -- typescript-language-server
-    -- 'ccls',
+    'ccls',
     'rust_analyzer',
 }
 local lspconfig = require('lspconfig')
