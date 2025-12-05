@@ -142,23 +142,17 @@ capabilities.textDocument.completion.completionItem.snippetSupport = false
 local servers = {
     'pyright', -- pyright
     'gopls',   -- gopls
-    -- 'sumneko_lua', -- lua-language-server
-    -- 'efm'
-    -- 'jdtls',    -- jdtls
-    'tsserver', -- typescript-language-server
+    'ts_ls', -- typescript-language-server
     'ccls',
     'rust_analyzer',
 }
-local lspconfig = require('lspconfig')
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-end
-lspconfig.lua_ls.setup {
+
+vim.lsp.config('*', {
     capabilities = capabilities,
     on_attach = on_attach,
+})
+
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             runtime = {
@@ -179,7 +173,7 @@ lspconfig.lua_ls.setup {
             },
         },
     },
-}
+})
 local black = {
     formatCommand = "black --fast --line-length 79 -",
     formatStdin = true,
@@ -195,11 +189,11 @@ local flake8 = {
         W = 'N',
     }
 }
-lspconfig.efm.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
+vim.lsp.config('efm', {
     init_options = { documentFormatting = true },
-    root_dir = vim.loop.cwd,
+    root_dir = function(_, on_dir)
+        on_dir(vim.loop.cwd())
+    end,
     filetypes = { 'python' },
     settings = {
         rootMarkers = { ".git/" },
@@ -211,7 +205,9 @@ lspconfig.efm.setup {
             },
         },
     },
-}
+})
+vim.list_extend(servers, { 'lua_ls', 'efm' })
+vim.lsp.enable(servers)
 
 -- local luasnip = require 'luasnip'
 -- require("luasnip.loaders.from_vscode").lazy_load()
