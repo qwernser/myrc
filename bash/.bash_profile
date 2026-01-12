@@ -60,3 +60,5 @@ export PATH="$HOME/.local/gradle/bin:$PATH"
 . "$HOME/.cargo/env"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
