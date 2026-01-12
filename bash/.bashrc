@@ -122,7 +122,7 @@ fi
 
 #if [ ! -z "${DISPLAY+aaa}" ] ; then xkbcomp $HOME/.config/output.xkb $DISPLAY 2> /dev/null ; fi
 
-if [ -f ~/.local/secrets.sh ]; then
-    . ~/.local/secrets.sh
-fi
+# if [ -f ~/.local/secrets.sh ]; then
+#     . ~/.local/secrets.sh
+# fi
 export PATH=$PATH:$HOME/downloads/gradle-8.4/bin
