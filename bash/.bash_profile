@@ -59,4 +59,4 @@ fi
 export PATH="$HOME/.local/gradle/bin:$PATH"
 . "$HOME/.cargo/env"
 
-export PATH="$(yarn global bin):$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
