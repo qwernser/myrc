@@ -116,7 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-eval "$(pyenv init -)"
+if case $- in *i*) true;; *) false;; esac && command -v pyenv >/dev/null 2>&1; then
+    eval "$(pyenv init - bash)"
+fi
 
 #if [ ! -z "${DISPLAY+aaa}" ] ; then xkbcomp $HOME/.config/output.xkb $DISPLAY 2> /dev/null ; fi
 
