@@ -98,12 +98,13 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 local telescope = require('telescope')
 telescope.setup()
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<space>ff', builtin.find_files, { desc = 'Telescope find files' })
 
 local on_attach = function(_, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = false, buffer = bufnr }
-    local builtin = require('telescope.builtin')
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
     vim.keymap.set('n', 'gD', function()
         vim.cmd('tab split')
