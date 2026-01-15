@@ -143,7 +143,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = false
 local servers = {
     'pyright', -- pyright
     'gopls',   -- gopls
-    'ts_ls', -- typescript-language-server
+    'tsgo', -- typescript-go
     'ccls',
     'rust_analyzer',
 }
