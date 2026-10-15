@@ -4,8 +4,6 @@ alias ipillicium='curl https://api.yillicium.com/ip'
 alias open="xdg-open"
 alias nv='nvim'
 alias n='nvim'
-alias qr='xclip -selection clipboard -o -t image/png | my-qr-decoder'
-alias clip='xclip -selection clipboard'
 function dh() {
     du -h "$@"
 }
